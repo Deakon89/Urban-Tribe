@@ -4,8 +4,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../../service/auth-service.service';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatFormFieldModule]
+    MatFormFieldModule,
+    RouterOutlet
+  ],
 })
 export class LoginComponent {
   loginForm = new FormGroup({
@@ -25,11 +28,20 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    const token = this.loginForm.value.token ?? '';
-    if (this.authService.validateToken(token)) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      alert('Token non valido');
+    try {
+      const token = this.loginForm?.value?.token ?? '';
+      if (!token) {
+        alert('Inserisci un token valido');
+        return;
+      }
+      if (this.authService.validateToken(token)) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        alert('Token non valido');
+      }
+    } catch (error) {
+      console.error('Errore durante il login', error);
+      alert('Si è verificato un errore, riprova più tardi');
     }
   }
 }

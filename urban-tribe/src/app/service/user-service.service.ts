@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Injector } from '@angular/core';
+import { AuthService } from './auth-service.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private _otherService: AuthService | undefined;
   private baseUrl = 'https://gorest.co.in/public/v2';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private injector: Injector) {}
+
+  get otherService(): AuthService {
+    if (!this._otherService) {
+      this._otherService = this.injector.get(AuthService);
+    }
+    return this._otherService;
+  }
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users`, {
