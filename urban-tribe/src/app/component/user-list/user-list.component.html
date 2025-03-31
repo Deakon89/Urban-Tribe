@@ -1,0 +1,5 @@
+<mat-nav-list>
+    <a mat-list-item *ngFor="let user of users" (click)="selectUser(user)">
+      {{ user.name }}
+    </a>
+  </mat-nav-list>

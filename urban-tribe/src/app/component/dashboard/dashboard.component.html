@@ -1,0 +1,14 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <ng-container *ngIf="selectedUser; else noSelection">
+        <app-user-detail [user]="selectedUser"></app-user-detail>
+        <!-- Potresti avere un bottone qui per caricare i post dell'utente -->
+      </ng-container>
+      <ng-template #noSelection>
+        <p>Clicca su un utente</p>
+      </ng-template>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

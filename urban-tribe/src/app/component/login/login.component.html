@@ -1,0 +1,9 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your token</mat-label>
+        <input matInput formControlName="token" placeholder="Token">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Login</button>
+    </form>
+  </div>

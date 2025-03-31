@@ -1,0 +1,18 @@
+<div class="about-container">
+    <mat-card class="about-card">
+      <h2>Chi siamo</h2>
+      <p>
+        UrbanVibe è un progetto nato per promuovere uno stile di vita urbano sostenibile, collaborativo e inclusivo.
+        Crediamo fermamente nel potere della condivisione e nella cura degli spazi cittadini, valorizzando l'ambiente urbano come luogo di incontro e crescita comunitaria.
+      </p>
+  
+      <h3>Il nostro team</h3>
+      <div class="team">
+        <div class="member" *ngFor="let member of teamMembers">
+          <img [src]="member.avatar" alt="{{member.name}}">
+          <h4>{{ member.name }}</h4>
+          <p>{{ member.role }}</p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
