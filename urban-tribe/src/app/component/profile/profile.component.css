@@ -23,11 +23,11 @@
   .profile-header h2 {
     margin: 0.5rem 0;
     font-size: 1.8rem;
-    color: #6600ff;
+    color: #ff9100;
   }
   
   .profile-header p {
-    color: #6600ff;
+    color: #444;
   }
   
   .profile-details {
@@ -40,7 +40,7 @@
   .profile-details mat-icon {
     vertical-align: middle;
     margin-right: 0.5rem;
-    color: #6600ff;
+    color: #ff9100;
   }
   
   button {

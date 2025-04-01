@@ -28,20 +28,15 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin() {
-    try {
-      const token = this.loginForm?.value?.token ?? '';
-      if (!token) {
-        alert('Inserisci un token valido');
-        return;
-      }
-      if (this.authService.validateToken(token)) {
-        this.router.navigate(['/dashboard']);
-      } else {
-        alert('Token non valido');
-      }
-    } catch (error) {
-      console.error('Errore durante il login', error);
-      alert('Si è verificato un errore, riprova più tardi');
+    const token = this.loginForm.get('token')?.value;
+    if (!token) {
+      alert('Inserisci un token valido');
+      return;
+    }
+    if (this.authService.login(token)) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert('Token non valido');
     }
   }
 }

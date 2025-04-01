@@ -1,2 +1,7 @@
-
-
+<div class="modal-content">
+<h2>Post di {{ data.user.name }}</h2>
+<div *ngFor="let post of data.posts">
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+</div>
+</div>

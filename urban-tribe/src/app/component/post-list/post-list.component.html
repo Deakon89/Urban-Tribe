@@ -1,1 +1,14 @@
-<p>post-list works!</p>
+<div *ngFor="let post of posts">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.body }}</p>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        {{ comment.content }}
+      </li>
+    </ul>
+    <input #newComment type="text" placeholder="Add a comment">
+    <button (click)="addComment(post.id, newComment.value)">Add Comment</button>
+  </div>
+  
+  <input #newPostTitle type="text" placeholder="New post title">
+  <button (click)="addPost(newPostTitle.value)">Add Post</button>
