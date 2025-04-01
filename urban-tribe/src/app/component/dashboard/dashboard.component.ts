@@ -33,5 +33,9 @@ export class DashboardComponent {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+
+  seePosts() {
+    this.router.navigate(['/posts']);
+  }
 }
 

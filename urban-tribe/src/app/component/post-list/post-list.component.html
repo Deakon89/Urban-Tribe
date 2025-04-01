@@ -1,14 +1,28 @@
+<div>
+  <select [(ngModel)]="pageSize" (change)="loadPosts()">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="20">40</option>
+    <option value="20">60</option>
+  </select>
+</div>
+
 <div *ngFor="let post of posts">
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.body }}</p>
-    <ul>
-      <li *ngFor="let comment of post.comments">
-        {{ comment.content }}
-      </li>
-    </ul>
-    <input #newComment type="text" placeholder="Add a comment">
-    <button (click)="addComment(post.id, newComment.value)">Add Comment</button>
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.body }}</p>
+  <p>Postato da: {{ post.user_id }}</p>
+  <div *ngFor="let comment of post.comments">
+    <p>{{ comment.content }}</p>
   </div>
+  <input #commentInput type="text" placeholder="Aggiungi un commento">
+  <button (click)="addComment(post.id, commentInput.value)">Aggiungi Commento</button>
+</div>
   
-  <input #newPostTitle type="text" placeholder="New post title">
-  <button (click)="addPost(newPostTitle.value)">Add Post</button>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <input formControlName="title" placeholder="Titolo del post" />
+    <input formControlName="body" placeholder="Corpo del post" />
+    <input formControlName="user_id" placeholder="user_id" type="number" />
+    <button type="submit">Aggiungi Post</button>
+  </form>
+  
