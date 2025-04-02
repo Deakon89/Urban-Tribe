@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { Router } from '@angular/router';
 
 export interface Comment {
   id: number;
@@ -36,8 +37,9 @@ export class PostListComponent implements OnInit {
   posts: Post[] = [];
   postForm : FormGroup;
   pageSize: number = 10;
+  
 
-  constructor(private postService: PostService) {
+  constructor(private postService: PostService, private router: Router) {
   this.postForm = new FormGroup({
     title: new FormControl('', Validators.required),
     body: new FormControl('', Validators.required),
@@ -124,6 +126,10 @@ export class PostListComponent implements OnInit {
          this.posts[postIndex].comments = formattedComments;
        }
     });
+  }
+
+  backToDash(){
+    this.router.navigate(['/dashboard']);
   }
 }
 

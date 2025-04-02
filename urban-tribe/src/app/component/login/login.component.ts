@@ -34,7 +34,7 @@ export class LoginComponent {
       return;
     }
     if (this.authService.login(token)) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/profile']);
     } else {
       alert('Token non valido');
     }

@@ -13,6 +13,7 @@
     </mat-form-field>
     <button class="post-button" mat-raised-button color="primary" type="submit">Aggiungi Post</button>
   </form>
+  <button mat-raised-button color="primary" (click)="backToDash()">Back to dashboard</button>
   
     <mat-form-field  class="post-input" appearance="fill">
       <mat-label>Post per pagina</mat-label>
@@ -43,4 +44,6 @@
       <button mat-raised-button color="primary" (click)="addComment(post.id, commentInput.value, commentInput)">Aggiungi Commento</button>
     </mat-card-actions>
   </mat-card>
+  
+  
   

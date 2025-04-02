@@ -11,6 +11,9 @@
         <p><mat-icon>location_on</mat-icon> {{ user.location }}</p>
       </div>
   
+      <button mat-raised-button color="primary" (click)="navigateToDashboard()">
+        Users Dashboard
+      </button>
       <button mat-raised-button color="primary" (click)="logout()">
         Logout
       </button>

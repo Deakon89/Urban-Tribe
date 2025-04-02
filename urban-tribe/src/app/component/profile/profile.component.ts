@@ -28,7 +28,9 @@ export class ProfileComponent {
     avatarUrl: 'https://i.pravatar.cc/300' 
   };
 
-
+  navigateToDashboard() {
+    this.router.navigate(['/dashboard']);
+  }
   logout() {
     this.router.navigate(['/']); 
   }
