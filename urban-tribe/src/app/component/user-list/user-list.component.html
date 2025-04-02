@@ -3,3 +3,12 @@
       {{ user.name }}
     </a>
   </mat-nav-list>
+
+  <div>
+    <select [(ngModel)]="pageSize" (change)="loadUsers()">
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="20">40</option>
+      <option value="20">60</option>
+    </select>
+  </div>

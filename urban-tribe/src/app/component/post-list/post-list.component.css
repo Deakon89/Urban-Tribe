@@ -1,0 +1,15 @@
+mat-card{
+    margin: 1rem;
+    padding: 0.8rem;
+    background-color: #000000aa;
+}
+mat-card-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.comment-div{
+    border-bottom: 1px solid #ccc;
+}

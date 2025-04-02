@@ -20,7 +20,7 @@ export class UserService {
     return this._otherService;
   }
 
-  getUsers(): Observable<any[]> {
+  getUsers(limit: number = 10): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users`, {
       headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
     });
@@ -34,6 +34,12 @@ export class UserService {
 
   getPostComments(postId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/posts/${postId}/comments`, {
+      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+    });
+  }
+
+  addUser(userData: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/users`, userData,{
       headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
     });
   }

@@ -17,15 +17,18 @@ export class PostService {
   }
 
   getComments(postId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/posts/${postId}/comments`,{headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }});
+    return this.http.get<any[]>(`${this.apiUrl}/posts/${postId}/comments`);
   }
 
   addPost(post: { title: string; body: string }): Observable<Post> {
     return this.http.post<Post>(`${this.apiUrl}/posts`, post,{headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }});
   }
 
-  addComment(postId: number, comment: { content: string }): Observable<Comment> {
-    return this.http.post<Comment>(`${this.apiUrl}/posts/${postId}/comments`, comment,{headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }});
+  addComment(postId: number, commentData: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/posts/${postId}/comments`, commentData, {
+      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+    });
   }
+  
 }
 

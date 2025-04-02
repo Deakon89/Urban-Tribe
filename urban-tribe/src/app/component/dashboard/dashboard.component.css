@@ -1,0 +1,13 @@
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+mat-sidenav-container{
+    height: 70vh;
+    width: 50%;
+    border-radius: 2%;
+    padding: 1rem;
+    margin: 1rem;
+}

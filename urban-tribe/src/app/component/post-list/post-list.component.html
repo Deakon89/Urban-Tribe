@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <select [(ngModel)]="pageSize" (change)="loadPosts()">
     <option value="5">5</option>
     <option value="10">10</option>
@@ -13,10 +13,11 @@
   <p>{{ post.body }}</p>
   <p>Postato da: {{ post.user_id }}</p>
   <div *ngFor="let comment of post.comments">
-    <p>{{ comment.content }}</p>
+    <p>{{ comment.body }}</p>
   </div>
-  <input #commentInput type="text" placeholder="Aggiungi un commento">
-  <button (click)="addComment(post.id, commentInput.value)">Aggiungi Commento</button>
+
+  <input #commentInput type="text" placeholder="Scrivi un commento">
+  <button (click)="addComment(post.id, commentInput.value, commentInput)">Aggiungi Commento</button>
 </div>
   
   <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
@@ -24,5 +25,52 @@
     <input formControlName="body" placeholder="Corpo del post" />
     <input formControlName="user_id" placeholder="user_id" type="number" />
     <button type="submit">Aggiungi Post</button>
-  </form>
+  </form> -->
   
+  <mat-card>
+    <mat-form-field appearance="fill">
+      <mat-label>Seleziona il numero di post per pagina</mat-label>
+      <mat-select [(ngModel)]="pageSize" (selectionChange)="loadPosts()">
+        <mat-option value="5">5</mat-option>
+        <mat-option value="10">10</mat-option>
+        <mat-option value="20">20</mat-option>
+        <mat-option value="40">40</mat-option>
+        <mat-option value="60">60</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card>
+  
+  <mat-card *ngFor="let post of posts">
+    <mat-card-title>{{ post.title }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ post.body }}</p>
+      <p>Postato da: {{ post.user_id }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <h3>Comments</h3>
+      <div class="comment-div" *ngFor="let comment of post.comments">
+        <p>{{ comment.body }}</p>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Scrivi un commento</mat-label>
+        <input matInput #commentInput>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="addComment(post.id, commentInput.value, commentInput)">Aggiungi Commento</button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Titolo del post</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Corpo del post</mat-label>
+      <input matInput formControlName="body">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>ID Utente</mat-label>
+      <input matInput formControlName="user_id" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Aggiungi Post</button>
+  </form>

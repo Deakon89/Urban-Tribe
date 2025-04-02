@@ -1,4 +1,40 @@
-<button mat-raised-button color="primary" type="submit" (click)="seePosts()">see all posts</button>
+<div class="dashboard-container">
+  
+  <div class="new-user-form">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmitUser()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Genere</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="male">Maschio</mat-option>
+          <mat-option value="female">Femmina</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Stato</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="active">Attivo</mat-option>
+          <mat-option value="inactive">Inattivo</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Aggiungi Utente</button>
+      <span><button mat-raised-button color="primary" type="submit" (click)="seePosts()">see all posts</button></span>
+      <span><button mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button></span>
+      
+    </form>
+  </div>
+
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="side" opened>
       <app-user-list (userSelected)="onUserSelected($event)"></app-user-list>
@@ -13,4 +49,4 @@
       </ng-template>
     </mat-sidenav-content>
   </mat-sidenav-container>
-  <button mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button>
+</div>
