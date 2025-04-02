@@ -2,17 +2,17 @@
   
   <div class="new-user-form">
     <form [formGroup]="userForm" (ngSubmit)="onSubmitUser()">
-      <mat-form-field appearance="fill">
+      <mat-form-field class="user-input" appearance="fill">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="name">
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
+      <mat-form-field class="user-input" appearance="fill">
         <mat-label>Email</mat-label>
         <input matInput formControlName="email">
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
+      <mat-form-field class="user-input" appearance="fill">
         <mat-label>Genere</mat-label>
         <mat-select formControlName="gender">
           <mat-option value="male">Maschio</mat-option>
@@ -20,7 +20,7 @@
         </mat-select>
       </mat-form-field>
   
-      <mat-form-field appearance="fill">
+      <mat-form-field class="user-input" appearance="fill">
         <mat-label>Stato</mat-label>
         <mat-select formControlName="status">
           <mat-option value="active">Attivo</mat-option>
@@ -28,9 +28,9 @@
         </mat-select>
       </mat-form-field>
   
-      <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Aggiungi Utente</button>
-      <span><button mat-raised-button color="primary" type="submit" (click)="seePosts()">see all posts</button></span>
-      <span><button mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button></span>
+      <button mat-raised-button class="user-input" color="primary" type="submit" [disabled]="!userForm.valid">Aggiungi Utente</button>
+      <span><button class="user-input" mat-raised-button color="primary" type="submit" (click)="seePosts()">see all posts</button></span>
+      <span><button class="user-input" mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button></span>
       
     </form>
   </div>

@@ -242,6 +242,15 @@ footer p{
 
    @media (max-width: 500px) {
    main{
-    padding: 0.8rem;
+    padding: 0;
+   }
+   h1{
+    margin: 0.8rem;
+   }
+   p{
+    margin: 0.8rem;
+   }
+   a{
+    margin: 0.8rem;
    }
   }

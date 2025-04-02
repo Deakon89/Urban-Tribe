@@ -9,7 +9,18 @@ mat-card-actions{
     align-items: start;
 }
 
+mat-card-content{
+    border-bottom: 1px solid cyan;
+}
 
 .comment-div{
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid cyan;
+}
+
+.post-button{
+    margin: 1rem;
+}
+
+.post-input{
+    margin: 1rem;
 }

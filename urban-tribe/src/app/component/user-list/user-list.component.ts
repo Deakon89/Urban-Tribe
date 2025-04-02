@@ -4,12 +4,13 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
-  imports: [MatListModule, MatIconModule, CommonModule, FormsModule],
+  imports: [MatListModule, MatIconModule, CommonModule, FormsModule, MatSelectModule],
 })
 export class UserListComponent {
   @Output() userSelected = new EventEmitter<any>();

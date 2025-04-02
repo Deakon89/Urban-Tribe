@@ -1,13 +1,35 @@
-.dashboard-container{
+/* .dashboard-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 mat-sidenav-container{
     height: 70vh;
-    width: 50%;
+    max-width: 100%;
     border-radius: 2%;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 0.8rem;
+    margin: 0.8rem;
+    background-color: #000000aa;
+}
+
+mat-sidenav{
+    max-width: 50%;
+  
+}
+
+mat-sidenav-content{
+    max-width: 100%;
+}
+
+.user-input{
+    margin: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+    mat-sidenav-container{
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
