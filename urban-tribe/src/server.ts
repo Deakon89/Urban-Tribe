@@ -8,7 +8,7 @@ import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
-import { getContext } from '@netlify/angular-runtime/context'
+import { getContext } from '@netlify/angular-runtime/context.mjs';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
