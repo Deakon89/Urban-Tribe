@@ -16,6 +16,8 @@ Urban Tribe è un progetto nato per promuovere uno stile di vita urbano sostenib
 - Angular 19
 - Angular Material
 - RxJS
+- Ngx cookie service
+- @angular/animations
 - karma & jasmine per il testing
 
 ## 📌Installazione
@@ -24,5 +26,5 @@ Per eseguire questo progetto localmente, segui questi passi:
 ```bash
 git clone https://github.com/tuo-username/urban-tribe.git
 cd urban-tribe
-npm install(dipendenze necessarie Angular-CLI, AngularMaterial)
+npm install(dipendenze necessarie Angular-CLI, AngularMaterial, ngx cookie service, angular/animations)
 ng serve
