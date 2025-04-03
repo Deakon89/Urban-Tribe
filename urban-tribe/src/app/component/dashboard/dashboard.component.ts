@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule, MatSelectionList} from '@angular/material/list';
+import {MatListModule} from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { UserListComponent } from '../user-list/user-list.component';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
@@ -12,6 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

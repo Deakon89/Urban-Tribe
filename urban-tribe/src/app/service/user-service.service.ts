@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injector } from '@angular/core';
 import { AuthService } from './auth-service.service';
+import { environment } from '../../enviroment/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private _otherService: AuthService | undefined;
-  private baseUrl = 'https://gorest.co.in/public/v2';
+  private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, private injector: Injector) {}
 
@@ -22,25 +23,25 @@ export class UserService {
 
   getUsers(limit: number = 10): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users`, {
-      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+      headers: { Authorization: `Bearer ${environment.token}` }
     });
   }
 
   getUserPosts(userId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users/${userId}/posts`, {
-      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+      headers: { Authorization: `Bearer ${environment.token}` }
     });
   }
 
   getPostComments(postId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/posts/${postId}/comments`, {
-      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+      headers: { Authorization: `Bearer ${environment.token}` }
     });
   }
 
   addUser(userData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/users`, userData,{
-      headers: { Authorization: `Bearer c348b3f17a6eba188295f45da783e9913329ccd443e4c6fda057539f6bb035c7` }
+      headers: { Authorization: `Bearer ${environment.token}` }
     });
   }
 }

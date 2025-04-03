@@ -1,9 +1,10 @@
 <div class="dashboard-container">
   
   <div class="new-user-form">
+    <h1>Users Dashboard</h1>
     <form [formGroup]="userForm" (ngSubmit)="onSubmitUser()">
       <mat-form-field class="user-input" appearance="fill">
-        <mat-label>Nome</mat-label>
+        <mat-label>Name</mat-label>
         <input matInput formControlName="name">
       </mat-form-field>
   
@@ -13,23 +14,23 @@
       </mat-form-field>
   
       <mat-form-field class="user-input" appearance="fill">
-        <mat-label>Genere</mat-label>
+        <mat-label>Gender</mat-label>
         <mat-select formControlName="gender">
-          <mat-option value="male">Maschio</mat-option>
-          <mat-option value="female">Femmina</mat-option>
+          <mat-option value="male">M</mat-option>
+          <mat-option value="female">W</mat-option>
         </mat-select>
       </mat-form-field>
   
       <mat-form-field class="user-input" appearance="fill">
-        <mat-label>Stato</mat-label>
+        <mat-label>Status</mat-label>
         <mat-select formControlName="status">
-          <mat-option value="active">Attivo</mat-option>
-          <mat-option value="inactive">Inattivo</mat-option>
+          <mat-option value="active">Active</mat-option>
+          <mat-option value="inactive">Inactive</mat-option>
         </mat-select>
       </mat-form-field>
   
-      <button mat-raised-button class="user-input" color="primary" type="submit" [disabled]="!userForm.valid">Aggiungi Utente</button>
-      <span><button class="user-input" mat-raised-button color="primary" type="submit" (click)="seePosts()">see all posts</button></span>
+      <button mat-raised-button class="user-input" color="primary" type="submit" [disabled]="!userForm.valid">Add new User</button>
+      <span><button class="user-input" mat-raised-button color="primary" type="submit" (click)="seePosts()">See all posts</button></span>
       <span><button class="user-input" mat-raised-button color="primary" type="submit" (click)="logout()">Logout</button></span>
       
     </form>
@@ -45,7 +46,7 @@
         <!-- Potresti avere un bottone qui per caricare i post dell'utente -->
       </ng-container>
       <ng-template #noSelection>
-        <p>Clicca su un utente</p>
+        <p>Select User</p>
       </ng-template>
     </mat-sidenav-content>
   </mat-sidenav-container>

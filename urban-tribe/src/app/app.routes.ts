@@ -12,14 +12,14 @@ import { PostListComponent } from './component/post-list/post-list.component';
 export const routes: Routes = [
     {  path: '', component: HomeComponent , children: [
         { path: 'about-us', component: AboutUsComponent, data:{animation: 'about-us'} },
-        { path: 'profile', component: ProfileComponent, data:{animation: 'profile'} },
+        { path: 'profile', component: ProfileComponent, data:{animation: 'profile'}, canActivate: [AuthGuard] },
         { path: 'login', component: LoginComponent, data:{animation: 'login'} },
         { path: 'dashboard', component: DashboardComponent, data:{animation: 'dashboard'}, canActivate: [AuthGuard], children: [
             { path: 'user-list', component: UserListComponent },
             { path: 'user-detail', component: UserDetailComponent},
             
         ]},
-        { path: 'posts', component: PostListComponent},
+        { path: 'posts', component: PostListComponent, canActivate: [AuthGuard] },
     ]},
     
 ];

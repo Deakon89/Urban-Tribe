@@ -18,11 +18,14 @@ export class UserDetailComponent {
 
   ngOnInit() {
     if (this.user) {
-      this.loadUserPosts(this.user.id);
+      this.loadUserPosts(this.user.id, new MouseEvent('click'));
     }
   }
 
-  loadUserPosts(userId: number) {
+  loadUserPosts( userId: number, event: MouseEvent ) {
+    event.stopImmediatePropagation();
+    event.stopPropagation();
+    event.preventDefault();
     this.userService.getUserPosts(userId).subscribe({
       next: (posts) => {
         this.posts = posts;

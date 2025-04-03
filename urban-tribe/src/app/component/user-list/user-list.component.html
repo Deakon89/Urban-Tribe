@@ -1,20 +1,12 @@
 <mat-nav-list>
-    <a mat-list-item *ngFor="let user of users" (click)="selectUser(user)">
+  <h3>Users</h3>
+    <a  mat-list-item *ngFor="let user of users" (click)="selectUser(user)">
       {{ user.name }}
     </a>
   </mat-nav-list>
 
-  <!-- <div>
-    <select [(ngModel)]="pageSize" (change)="loadUsers()">
-      <option value="10">10</option>
-      <option value="20">20</option>
-      <option value="20">40</option>
-      <option value="20">60</option>
-    </select>
-  </div> -->
-
   <mat-form-field  class="post-input" appearance="fill">
-    <mat-label>utenti per pagina</mat-label>
+    <mat-label>Paginator</mat-label>
     <mat-select [(ngModel)]="pageSize" (selectionChange)="loadUsers()">
       <mat-option value="10">10</mat-option>
       <mat-option value="20">20</mat-option>

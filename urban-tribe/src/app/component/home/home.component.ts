@@ -29,6 +29,11 @@ export class HomeComponent {
     this.menuActive = !this.menuActive;
   }
 
+  closeMenu() {
+    this.menuActive = false;
+  }
+
+
   hasChildRoute(outlet: RouterOutlet): boolean {
     return outlet.isActivated;
   }

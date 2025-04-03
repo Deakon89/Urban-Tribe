@@ -4,6 +4,11 @@
     align-items: center;
 } */
 
+.new-user-form{
+    border: 1px solid #cccccca0;
+    box-shadow: 1px 1px 1px 1px #cccccca0;
+}
+
 mat-sidenav-container{
     height: 70vh;
     max-width: 100%;
@@ -14,8 +19,7 @@ mat-sidenav-container{
 }
 
 mat-sidenav{
-    max-width: 50%;
-  
+    max-width: 40%;
 }
 
 mat-sidenav-content{
@@ -26,10 +30,18 @@ mat-sidenav-content{
     margin: 0.8rem;
 }
 
+h1{
+    margin-left: 0.5rem;
+}
+
 @media screen and (max-width: 600px) {
     mat-sidenav-container{
         padding: 0;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .new-user-form{
+        margin: 0.5rem;
     }
 }

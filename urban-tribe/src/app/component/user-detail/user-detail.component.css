@@ -1,0 +1,16 @@
+mat-icon{
+    color: cyan;
+    margin-right: 0.5rem;
+}
+
+em{
+    color: cyan;
+}
+
+@media screen and (max-width: 600px) {
+    .email{
+        font-size: 0.8rem;
+        
+    }
+    
+}

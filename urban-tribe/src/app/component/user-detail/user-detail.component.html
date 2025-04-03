@@ -1,6 +1,9 @@
 <div>
     <h2>{{ user.name }}</h2>
-    <p>{{ user.email }}</p>
+    <p>id: <em>{{ user.id }}</em></p>
+    <p><mat-icon>email</mat-icon> <em class="email">{{ user.email }}</em></p>
+    <p>gender: <em>{{ user.gender }}</em></p>
+    <p>status: <em>{{ user.status }}</em></p>
     
-    <button mat-raised-button color="primary" type="submit" (click)="loadUserPosts(user.id)">Vedi Post</button>
+    <button mat-raised-button color="primary" type="submit" (click)="loadUserPosts(user.id, $event)">Vedi Post</button>
 </div>

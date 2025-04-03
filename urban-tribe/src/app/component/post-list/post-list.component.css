@@ -3,6 +3,11 @@ mat-card{
     padding: 0.8rem;
     background-color: #000000aa;
 }
+
+h1{
+    margin-left:0.5rem ;
+}
+
 mat-card-actions{
     display: flex;
     flex-direction: column;
@@ -11,6 +16,10 @@ mat-card-actions{
 
 mat-card-content{
     border-bottom: 1px solid cyan;
+}
+
+mat-card-title{
+    color: cyan;
 }
 
 .comment-div{
@@ -23,4 +32,15 @@ mat-card-content{
 
 .post-input{
     margin: 1rem;
+}
+
+.post-form{
+    border: 1px solid #cccccca0;
+    box-shadow: 1px 1px 1px 1px #cccccca0;
+}
+
+@media screen and (max-width: 600px) {
+    .post-form{
+        margin: 0.5rem;
+    }
 }

@@ -51,7 +51,7 @@ export class AuthService {
     return !!token && this.validateToken(token);
   }
 
-  public readonly validToken = 'c';
+  public readonly validToken = 'cacchio';
   public validateToken(token: string): boolean {
     return token === this.validToken;
   }

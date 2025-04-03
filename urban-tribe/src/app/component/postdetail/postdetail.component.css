@@ -1,4 +1,21 @@
 .modal-content{
     color: white;
     padding: 1rem;
+    height: auto;
+    overflow: hidden;   
+}
+
+h3{
+    color: cyan;
+}
+
+mat-icon{
+    cursor: pointer;
+    color: orange;
+}
+
+@media screen and (max-width: 600px) {
+    p{
+        font-size: 0.8rem;
+    }
 }

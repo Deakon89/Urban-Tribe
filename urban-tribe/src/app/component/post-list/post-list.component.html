@@ -1,4 +1,6 @@
-  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+  <div class="post-form">
+  <form  [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <h1>GreenTalks</h1>
     <mat-form-field  class="post-input" appearance="fill">
       <mat-label>Titolo del post</mat-label>
       <input matInput formControlName="title">
@@ -13,7 +15,7 @@
     </mat-form-field>
     <button class="post-button" mat-raised-button color="primary" type="submit">Aggiungi Post</button>
   </form>
-  <button mat-raised-button color="primary" (click)="backToDash()">Back to dashboard</button>
+  <button class="post-button" mat-raised-button color="primary" (click)="backToDash()">Back to dashboard</button>
   
     <mat-form-field  class="post-input" appearance="fill">
       <mat-label>Post per pagina</mat-label>
@@ -24,7 +26,7 @@
         <mat-option value="60">60</mat-option>
       </mat-select>
     </mat-form-field>
-
+</div>
   
   <mat-card *ngFor="let post of posts">
     <mat-card-title>{{ post.title }}</mat-card-title>

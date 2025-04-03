@@ -1,14 +1,29 @@
 .login-container {
-    width: 300px;
-    margin: 100px auto;
+    width: 19rem;
+    height: 19rem;
+    margin: auto;
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    border: 1px solid #cccccca0;
+    box-shadow: 1px 1px 1px 1px #cccccca0;
+  }
+
+  .login-button{
+    margin: 0.8rem;
   }
   
   mat-form-field {
-    width: 100%;
-  }
+    width: 90%;
+    margin: 0.8rem;
+  } 
   
   button {
     margin-top: 20px;
   }
+
+  h1{
+    margin-left: 0.5rem;
+  }
+
+  

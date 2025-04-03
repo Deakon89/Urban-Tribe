@@ -3,6 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
   
   // example data
   user = {
@@ -32,6 +33,7 @@ export class ProfileComponent {
     this.router.navigate(['/dashboard']);
   }
   logout() {
+    this.authService.logout();
     this.router.navigate(['/']); 
   }
 }
