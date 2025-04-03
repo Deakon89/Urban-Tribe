@@ -7,14 +7,13 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { AngularAppEngine, createRequestHandler } from '@angular/ssr';
-import { getContext } from '@netlify/angular-runtime/context.mjs';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -28,9 +27,13 @@ const angularApp = new AngularNodeAppEngine();
  * ```
  */
 
+
 /**
  * Serve static files from /browser
+ * 
+ * 
  */
+
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -42,6 +45,8 @@ app.use(
 /**
  * Handle all other requests by rendering the Angular application.
  */
+
+
 app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)
