@@ -33,10 +33,12 @@ export class LoginComponent {
       alert('Inserisci un token valido');
       return;
     }
-    if (this.authService.login(token)) {
-      this.router.navigate(['/profile']);
-    } else {
-      alert('Token non valido');
-    }
+    this.authService.login(token).subscribe(valid => {
+      if (valid) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        alert('Token non valido');
+      }
+    });
   }
 }

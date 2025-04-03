@@ -12,7 +12,7 @@ export class UserService {
   private _otherService: AuthService | undefined;
   private baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, private injector: Injector) {}
+  constructor(private http: HttpClient, private injector: Injector, private authService: AuthService) {}
 
   get otherService(): AuthService {
     if (!this._otherService) {
@@ -23,25 +23,25 @@ export class UserService {
 
   getUsers(limit: number = 10): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users`, {
-      headers: { Authorization: `Bearer ${environment.token}` }
+      headers: { Authorization: `Bearer ${this.authService.getToken()}` }
     });
   }
 
   getUserPosts(userId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/users/${userId}/posts`, {
-      headers: { Authorization: `Bearer ${environment.token}` }
+      headers: { Authorization: `Bearer ${this.authService.getToken()}` }
     });
   }
 
   getPostComments(postId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/posts/${postId}/comments`, {
-      headers: { Authorization: `Bearer ${environment.token}` }
+      headers: { Authorization: `Bearer ${this.authService.getToken()}` }
     });
   }
 
   addUser(userData: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/users`, userData,{
-      headers: { Authorization: `Bearer ${environment.token}` }
+      headers: { Authorization: `Bearer ${this.authService.getToken()}` }
     });
   }
 }
