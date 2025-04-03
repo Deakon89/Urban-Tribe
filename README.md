@@ -3,27 +3,26 @@
 
 # Urban Tribe
 
-## Descrizione
+## 📌Descrizione
 Urban Tribe è un progetto nato per promuovere uno stile di vita urbano sostenibile, collaborativo e inclusivo. Miriamo a valorizzare l'ambiente urbano come luogo di incontro e crescita comunitaria, credendo fermamente nel potere della condivisione e nella cura degli spazi cittadini.
 
-## Funzionalità
-- **Gestione Utenti:** permette di visualizzare, aggiungere e rimuovere utenti.
+## 📌Funzionalità
+- **Gestione Utenti:** permette di visualizzare, aggiungere utenti.
 - **Visualizzazione Post:** gli utenti possono vedere i post e i dettagli correlati.
 - **Aggiunta Commenti:** gli utenti possono aggiungere commenti ai post.
 - **Dashboard Dinamica:** visualizzazione e gestione delle informazioni utente attraverso una dashboard interattiva.
 
-## Tecnologie Utilizzate
+## 📌Tecnologie Utilizzate
 - Angular 19
 - Angular Material
 - RxJS
-- Node.js con Express per il backend (se applicabile)
-- MongoDB o MySQL per la gestione del database (se applicabile)
+- karma & jasmine per il testing
 
-## Installazione
+## 📌Installazione
 Per eseguire questo progetto localmente, segui questi passi:
 
 ```bash
 git clone https://github.com/tuo-username/urban-tribe.git
 cd urban-tribe
-npm install
+npm install(dipendenze necessarie Angular-CLI, AngularMaterial)
 ng serve
