@@ -12,8 +12,8 @@
 mat-sidenav-container{
     height: 70vh;
     max-width: 100%;
-    border-radius: 2%;
-    padding: 0.8rem;
+    border-radius: 1%;
+   
     margin: 0.8rem;
     background-color: #000000aa;
 }
@@ -24,6 +24,7 @@ mat-sidenav{
 
 mat-sidenav-content{
     max-width: 100%;
+    padding: 0.5rem;
 }
 
 .user-input{
@@ -43,5 +44,9 @@ h1{
 
     .new-user-form{
         margin: 0.5rem;
+    }
+
+    mat-sidenav-content{
+        padding: 0.2rem;
     }
 }

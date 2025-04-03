@@ -13,6 +13,7 @@ import { PostdetailComponent } from '../postdetail/postdetail.component';
 export class UserDetailComponent {
   @Input() user: any;
   posts: any[] = [];
+  
 
   constructor(private userService: UserService, private dialog: MatDialog) {}
 

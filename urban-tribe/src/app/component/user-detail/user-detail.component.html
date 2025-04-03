@@ -1,5 +1,6 @@
 <div>
     <h2>{{ user.name }}</h2>
+    <img [src]="'https://i.pravatar.cc/150?u=' + user.id" alt="{{user.name}}">
     <p>id: <em>{{ user.id }}</em></p>
     <p><mat-icon>email</mat-icon> <em class="email">{{ user.email }}</em></p>
     <p>gender: <em>{{ user.gender }}</em></p>
