@@ -18,7 +18,7 @@ Urban Tribe è un progetto nato per promuovere uno stile di vita urbano sostenib
 
 ## 📌Utilizzo App
 UT è una web app molto semplice da usare, nella home si dovrà cliccare il button login che farà apparire la barra di inserimento del token.
-Nel caso il token non fosse disponibile in basso al "<div>" che contiene il login c'è un link "get the token".
+Nel caso il token non fosse disponibile in basso al "div" che contiene il login c'è un link "get the token".
 
 Dopo aver effettuato l'accesso si passa al profilo Admin che ha un button Dashboard e uno Logout, quest'ultimo reindirizza alla home, mentre il primo porta alla dashboard per la gestione utenti  che permette di visualizzare la lista completa delle persone attive e non attive presenti nel sistema(è possibile aggiungere nuovi utenti) e di visualizzarne i dettagli e i post personali.
 
