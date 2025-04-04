@@ -35,7 +35,7 @@ export class LoginComponent {
     }
     this.authService.login(token).subscribe(valid => {
       if (valid) {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/profile']);
       } else {
         alert('Token non valido');
       }
