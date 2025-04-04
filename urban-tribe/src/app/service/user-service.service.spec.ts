@@ -13,7 +13,7 @@ describe('UserService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [UserService, { provide: AuthService, useValue: { tokenMethod: () => 'fake_token' } }]
+      providers: [UserService, { provide: AuthService, useValue: { getToken: () => 'fake_token' } }]
     });
     service = TestBed.inject(UserService);
     injector = TestBed.inject(Injector);
@@ -21,7 +21,7 @@ describe('UserService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Ensure that no requests are outstanding.
+    httpMock.verify(); 
   });
 
   it('should fetch users correctly', () => {
@@ -77,7 +77,7 @@ describe('UserService', () => {
     expect(req.request.body).toEqual(newUser);
     req.flush({
       ...newUser,
-      id: 2 // Mocked response with an id
+      id: 2 
     });
   });
 });

@@ -37,7 +37,7 @@ describe('LoginComponent', () => {
   });
 
   it('should navigate to "/profile" when login is successful', () => {
-    spyOn(authService, 'login');
+    spyOn(authService, 'login').and.returnValue(of(true));
     spyOn(router, 'navigate');
 
     component.loginForm.controls['token'].setValue('valid-token');
@@ -48,7 +48,7 @@ describe('LoginComponent', () => {
   });
 
   it('should not navigate when token is invalid', () => {
-    spyOn(authService, 'login');
+    spyOn(authService, 'login').and.returnValue(of(false));
     spyOn(window, 'alert');
     spyOn(router, 'navigate');
 
