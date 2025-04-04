@@ -17,7 +17,7 @@ describe('PostService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Verifies that no requests are outstanding.
+    httpMock.verify(); 
   });
 
   it('should fetch posts correctly', () => {
@@ -30,7 +30,7 @@ describe('PostService', () => {
 
     const req = httpMock.expectOne(`${environment.apiUrl}/posts`);
     expect(req.request.method).toBe('GET');
-    req.flush(mockPosts); // Simulate successful response
+    req.flush(mockPosts); 
   });
 
   it('should add a new post and return it', () => {
@@ -45,7 +45,7 @@ describe('PostService', () => {
     expect(req.request.body).toEqual(newPost);
     req.flush({
       ...newPost,
-      id: 100, // Mocked response with an id
+      id: 100, 
       user_id: 1,
       comments: []
     });

@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { routeAnimations } from './route-animation';
 import { CommonModule } from '@angular/common';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 
 @Component({
@@ -11,7 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterOutlet,
     CommonModule,
-    // FontAwesomeModule,
+   
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -24,7 +23,7 @@ import { CommonModule } from '@angular/common';
   
 })
 export class AppComponent {
-  // faGithub = ['fab', 'github'];
+ 
   title = 'Urban-Tribe';
   prepareRoute(outlet: RouterOutlet) {
     return outlet?.activatedRouteData?.['animation'];

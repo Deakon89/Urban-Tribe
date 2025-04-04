@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { Post } from '../component/post-list/post-list.component';
 import { environment } from '../../enviroment/enviroment';
 import { AuthService } from './auth-service.service';
@@ -15,7 +15,7 @@ export class PostService {
 
   getPosts(limit: number = 10): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.apiUrl}/posts`,{headers: { Authorization: `Bearer ${this.authService.getToken()}` }
-    });
+    }).pipe(delay(2000));
   }
 
   getComments(postId: number): Observable<any[]> {

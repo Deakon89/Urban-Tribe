@@ -2,23 +2,23 @@
   <form  [formGroup]="postForm" (ngSubmit)="onSubmit()">
     <h1>GreenTalks</h1>
     <mat-form-field  class="post-input" appearance="fill">
-      <mat-label>Titolo del post</mat-label>
+      <mat-label>Title</mat-label>
       <input matInput formControlName="title">
     </mat-form-field>
     <mat-form-field  class="post-input" appearance="fill">
-      <mat-label>Corpo del post</mat-label>
+      <mat-label>body</mat-label>
       <input matInput formControlName="body">
     </mat-form-field>
     <mat-form-field  class="post-input" appearance="fill">
-      <mat-label>ID Utente</mat-label>
+      <mat-label>ID</mat-label>
       <input matInput formControlName="user_id" type="number">
     </mat-form-field>
-    <button class="post-button" mat-raised-button color="primary" type="submit">Aggiungi Post</button>
+    <button class="post-button" mat-raised-button color="primary" type="submit">add new post</button>
   </form>
   <button class="post-button" mat-raised-button color="primary" (click)="backToDash()">Back to dashboard</button>
   
     <mat-form-field  class="post-input" appearance="fill">
-      <mat-label>Post per pagina</mat-label>
+      <mat-label>Paginator</mat-label>
       <mat-select [(ngModel)]="pageSize" (selectionChange)="loadPosts()">
         <mat-option value="10">10</mat-option>
         <mat-option value="20">20</mat-option>
@@ -33,7 +33,7 @@
     <mat-card-title>{{ post.title }}</mat-card-title>
     <mat-card-content>
       <p>{{ post.body }}</p>
-      <p>Postato da: {{ post.user_id }}</p>
+      <p>Posted by: {{ post.user_id }}</p>
     </mat-card-content>
     <mat-card-actions>
       <h3>Comments</h3>

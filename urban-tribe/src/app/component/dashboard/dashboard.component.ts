@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
   onSubmitUser(): void {
     if (this.userForm.valid) {
       this.userService.addUser(this.userForm.value).subscribe({
-        next: (user) => console.log('Utente aggiunto:', user),
+        next: (user) => console.log('User added:', user),
       });
       this.userForm.reset();
     }

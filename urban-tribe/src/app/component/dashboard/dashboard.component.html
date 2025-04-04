@@ -43,7 +43,6 @@
     <mat-sidenav-content>
       <ng-container *ngIf="selectedUser; else noSelection">
         <app-user-detail [user]="selectedUser"></app-user-detail>
-        <!-- Potresti avere un bottone qui per caricare i post dell'utente -->
       </ng-container>
       <ng-template #noSelection>
         <p>Select User</p>

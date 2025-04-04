@@ -30,14 +30,14 @@ export class LoginComponent {
   onLogin() {
     const token = this.loginForm.get('token')?.value;
     if (!token) {
-      alert('Inserisci un token valido');
+      alert('insert valid token');
       return;
     }
     this.authService.login(token).subscribe(valid => {
       if (valid) {
         this.router.navigate(['/profile']);
       } else {
-        alert('Token non valido');
+        alert('invalid Token');
       }
     });
   }

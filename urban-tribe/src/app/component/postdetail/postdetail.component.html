@@ -2,7 +2,7 @@
   <button mat-icon-button (click)="onClose()">
     <mat-icon>close</mat-icon>
   </button>
-<h3>Post di {{ data.user.name }}</h3>
+<h3>Posted by {{ data.user.name }}</h3>
 <div *ngFor="let post of data.posts">
   <h4>{{ post.title }}</h4>
   <p>{{ post.body }}</p>

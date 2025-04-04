@@ -16,15 +16,15 @@ export interface Comment {
   postId: number;
   name: string;
   email: string;
-  body: string; // Usa 'content' al posto di 'body'
+  body: string; 
 }
 
 
 export interface Post {
   id: number;
   title: string;
-  body: string;  // Aggiunto per supportare il corpo del post
-  user_id: number;  // Aggiunto per memorizzare il nome dell'utente
+  body: string;  
+  user_id: number; 
   comments: Comment[];
 }
 
@@ -86,14 +86,14 @@ export class PostListComponent implements OnInit {
 
   addComment(postId: number, commentContent: string, commentInput: HTMLInputElement): void {
     if (!commentContent.trim()) {
-      console.warn('Non puoi aggiungere un commento vuoto');
+      console.warn('Comment content is empty.');
       return;
     }
   
     const newComment = {
-      post_id: postId, // Assicurati che il nome della proprietà corrisponda a quello atteso dall'API
-      name: "Nome Utente", // Qui puoi mettere il nome dell'utente o gestirlo dinamicamente
-      email: "email@esempio.it", // Anche l'email può essere gestita dinamicamente
+      post_id: postId, 
+      name: "Nome Utente",
+      email: "email@esempio.it", 
       body: commentContent
     };
   
@@ -102,13 +102,13 @@ export class PostListComponent implements OnInit {
         const postIndex = this.posts.findIndex(p => p.id === postId);
         if (postIndex !== -1) {
           this.posts[postIndex].comments = [...this.posts[postIndex].comments, comment];
-          console.log('Commento aggiunto con successo');
+          console.log('Comment added:', comment);
         }
-        commentInput.value = ''; // Pulisci l'input dopo aver aggiunto il commento
+        commentInput.value = ''; 
       },
       error: ({ error }) => {
         console.error('Failed to add comment:', error);
-        alert(`Non è stato possibile aggiungere il commento: ${error}`);
+        alert(`Failed to add comment: ${error}`);
       }
     });
   }
@@ -121,7 +121,7 @@ export class PostListComponent implements OnInit {
         postId: comment.post_id,
         name: comment.name,
         email: comment.email,
-        body: comment.body  // Mappa 'body' a 'content'
+        body: comment.body  
       }));
       console.log('Comments for post', postId, 'fetched:', formattedComments);
       const postIndex = this.posts.findIndex(post => post.id === postId);

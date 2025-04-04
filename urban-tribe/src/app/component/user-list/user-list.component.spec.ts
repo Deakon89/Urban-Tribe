@@ -20,13 +20,13 @@ describe('UserListComponent', () => {
       providers: [
         { provide: UserService, useValue: userServiceMock }
       ],
-      schemas: [NO_ERRORS_SCHEMA] // This schema prevents angular from erroring on unknown elements and attributes
+      schemas: [NO_ERRORS_SCHEMA] 
     })
     .compileComponents();
 
     fixture = TestBed.createComponent(UserListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges(); // runs initial lifecycle events including ngOnInit
+    fixture.detectChanges(); 
   });
 
   it('should create', () => {
@@ -34,8 +34,8 @@ describe('UserListComponent', () => {
   });
 
   it('should load users on init', () => {
-    expect(userServiceMock.getUsers).toHaveBeenCalledWith(10); // Check if getUsers was called with pageSize
-    expect(component.users.length).toBe(2); // Check if users are set correctly
+    expect(userServiceMock.getUsers).toHaveBeenCalledWith(10); 
+    expect(component.users.length).toBe(2); 
   });
 
   it('should emit selected user when selectUser is called', () => {

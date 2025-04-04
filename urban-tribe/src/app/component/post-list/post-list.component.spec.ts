@@ -18,7 +18,7 @@ describe('PostListComponent', () => {
         FormsModule,
         HttpClientTestingModule,
         RouterTestingModule,
-        PostListComponent // Utilizza il componente come standalone
+        PostListComponent 
       ],
     })
     .compileComponents();
@@ -48,15 +48,10 @@ describe('PostListComponent', () => {
     spyOn(postService, 'getPosts').and.returnValue(throwError(() => new Error('Error loading posts')));
     component.loadPosts();
     expect(postService.getPosts).toHaveBeenCalled();
-    // Qui potresti controllare che un messaggio di errore sia stato visualizzato o loggato
+    
   });
 
-  // it('should add a post when form is valid', () => {
-  //   spyOn(postService, 'addPost').and.returnValue(of({}));
-  //   component.postForm.setValue({ title: 'New Post', body: 'Post content', user_id: '1' });
-  //   component.onSubmit();
-  //   expect(postService.addPost).toHaveBeenCalled();
-  // });
+
 
   it('should add a comment to the post', () => {
     component.posts = [{
@@ -73,12 +68,12 @@ describe('PostListComponent', () => {
     spyOn(postService, 'addComment').and.returnValue(of(newComment));
     component.addComment(1, 'Great post!', inputElement);
 
-    fixture.detectChanges(); // Update the view if necessary
+    fixture.detectChanges(); 
 
     expect(postService.addComment).toHaveBeenCalledWith(1, newComment);
     expect(component.posts[0].comments.length).toBe(1);
     expect(component.posts[0].comments[0].body).toEqual('Great post!');
-    expect(inputElement.value).toBe(''); // Check that the input is cleared
+    expect(inputElement.value).toBe(''); 
   });
 
   it('should not add a comment when input is empty', () => {
@@ -93,10 +88,6 @@ describe('PostListComponent', () => {
     inputElement.value = '';
 
     component.addComment(1, '', inputElement);
-
-    // expect(postService.addComment).not.toHaveBeenCalled(); // Ensure addComment is not called
-    // expect(component.posts[0].comments.length).toBe(0);
-    // expect(inputElement.value).toBe(''); // Check that the input is still empty
   });
 });
  

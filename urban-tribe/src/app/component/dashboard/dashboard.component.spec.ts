@@ -26,7 +26,7 @@ describe('DashboardComponent', () => {
         DashboardComponent
       ],
       providers: [ AuthService, UserService ],
-      schemas: [ NO_ERRORS_SCHEMA ] // Usa questo schema per ignorare gli elementi non-Angular nel template
+      schemas: [ NO_ERRORS_SCHEMA ] 
     }).compileComponents();
 
     fixture = TestBed.createComponent(DashboardComponent);

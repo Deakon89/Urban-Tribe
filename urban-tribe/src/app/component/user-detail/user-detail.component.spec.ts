@@ -27,7 +27,7 @@ describe('UserDetailComponent', () => {
 
     fixture = TestBed.createComponent(UserDetailComponent);
     component = fixture.componentInstance;
-    component.user = { id: 123, name: 'Test User' }; // Fornisci un oggetto utente per evitare errori di undefined
+    component.user = { id: 123, name: 'Test User' }; 
     fixture.detectChanges();
   });
 
@@ -39,10 +39,7 @@ describe('UserDetailComponent', () => {
     expect(userServiceMock.getUserPosts).toHaveBeenCalledWith(123);
   });
 
-//   it('should open a dialog with posts on successful load', () => {
-//     component.loadUserPosts(123, new MouseEvent('click'));
-//     expect(dialogMock.open).toHaveBeenCalled();
-//   });
+
 });
 
   

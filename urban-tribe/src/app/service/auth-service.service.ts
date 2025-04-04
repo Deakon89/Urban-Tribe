@@ -39,26 +39,4 @@ export class AuthService {
     return this.cookieService.get('auth_token');
   }
 }
-//   login(token: string): boolean {
-//     if (this.validateToken(token)) {
-//       this.cookieService.set('auth_token', token, 1, '/', undefined, true, 'Strict');
-//       return true;
-//     }
-//     return false;
-//   }
-
-//   logout(): void {
-//     this.cookieService.delete('auth_token', '/');
-//   }
-
-//   isAuthenticated(): boolean {
-//     const token = this.cookieService.get('auth_token');
-//     return !!token && this.validateToken(token);
-//   }
-
-  
-//   public validateToken(token: string): boolean {
-//     return token === this.validToken;
-//   }
-// }
 
