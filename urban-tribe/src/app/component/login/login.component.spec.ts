@@ -19,7 +19,7 @@ describe('LoginComponent', () => {
         ReactiveFormsModule,
         RouterTestingModule.withRoutes([]),
         HttpClientTestingModule,
-        LoginComponent  // Utilizza il componente come standalone
+        LoginComponent  
       ]
     }).compileComponents();
 
@@ -27,7 +27,7 @@ describe('LoginComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
 
-    // Ottieni le istanze dei servizi dal injector
+    
     authService = TestBed.inject(AuthService);
     router = TestBed.inject(Router);
   });
@@ -37,7 +37,7 @@ describe('LoginComponent', () => {
   });
 
   it('should navigate to "/profile" when login is successful', () => {
-    spyOn(authService, 'login').and.returnValue(true);
+    spyOn(authService, 'login');
     spyOn(router, 'navigate');
 
     component.loginForm.controls['token'].setValue('valid-token');
@@ -48,7 +48,7 @@ describe('LoginComponent', () => {
   });
 
   it('should not navigate when token is invalid', () => {
-    spyOn(authService, 'login').and.returnValue(false);
+    spyOn(authService, 'login');
     spyOn(window, 'alert');
     spyOn(router, 'navigate');
 
@@ -60,6 +60,7 @@ describe('LoginComponent', () => {
     expect(window.alert).toHaveBeenCalledWith('Token non valido');
   });
 });
+
 
 
 
