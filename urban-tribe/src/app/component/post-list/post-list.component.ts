@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { Router } from '@angular/router';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 export interface Comment {
   id: number;
@@ -31,12 +32,13 @@ export interface Post {
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.css'],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule],
+  imports: [CommonModule, SpinnerComponent, ReactiveFormsModule, FormsModule, MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatSelectModule],
 })
 export class PostListComponent implements OnInit {
   posts: Post[] = [];
   postForm : FormGroup;
   pageSize: number = 10;
+  loading: boolean = true;
   
 
   constructor(private postService: PostService, private router: Router) {
@@ -52,8 +54,10 @@ export class PostListComponent implements OnInit {
   }
 
   loadPosts(): void {
+    this.loading = true;
     this.postService.getPosts(this.pageSize).subscribe(posts => {
       this.posts = posts;
+      this.loading = false;
       this.posts.forEach(post => {
         this.getComments(post.id);
       });

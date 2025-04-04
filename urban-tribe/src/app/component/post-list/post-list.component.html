@@ -27,7 +27,8 @@
       </mat-select>
     </mat-form-field>
 </div>
-  
+<app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="!loading" >
   <mat-card *ngFor="let post of posts">
     <mat-card-title>{{ post.title }}</mat-card-title>
     <mat-card-content>
@@ -46,6 +47,6 @@
       <button mat-raised-button color="primary" (click)="addComment(post.id, commentInput.value, commentInput)">Aggiungi Commento</button>
     </mat-card-actions>
   </mat-card>
-  
+  </div>
   
   
