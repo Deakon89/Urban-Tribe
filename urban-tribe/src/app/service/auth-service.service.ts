@@ -17,7 +17,7 @@ export class AuthService {
       headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` })
     }).pipe(
       map(() => {
-        this.cookieService.set('auth_token', token, 60, '/', undefined, true, 'Strict');
+        this.cookieService.set('auth_token', token, 1, '/', undefined, true, 'Strict');
         return true;
       }),
       catchError((error) => {
